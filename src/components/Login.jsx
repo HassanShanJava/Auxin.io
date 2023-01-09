@@ -5,21 +5,22 @@ import loginImg from "../assets/login.jpg";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 
-import { Link } from "react-router-dom";
-
-const login = (e) => {
-    e.preventDefault()
-    let user=document.getElementById("username").value
-    console.log(user);
-    let pass=document.getElementById("password").value
-    console.log(pass);
-
-    if(user==="hassan"&pass==="1234"){
-        window.location.replace("/chart")
-    }
-};
-
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+    const navigate=useNavigate()
+
+    const login = (e) => {
+        e.preventDefault()
+        let user=document.getElementById("username").value
+        console.log(user);
+        let pass=document.getElementById("password").value
+        console.log(pass);
+    
+        if(user==="hassan"&pass==="1234"){
+            navigate("/chart")
+        }
+    };
+
   return (
     <div className="relative w-full h-screen bg-zinc-900/90">
       <img
